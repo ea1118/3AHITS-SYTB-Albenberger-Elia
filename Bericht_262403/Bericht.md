@@ -127,3 +127,21 @@ Verwende nur die Variablen anstatt der Directory und Filenamen um folgendes zu l
 - Gib den Inhalt der Datei (unter Verwendung der Variablen) aus.
 
 ### 1.1 Uebung:
+
+**.sh file:**
+```sh
+dir1="Hauptordner"
+dir2="Unterordner"
+filename="meineDatei"
+ext="txt"
+```
+```sh
+mkdir -p $dir1/$dir2
+```
+```sh
+echo "Hallo Welt" > $dir1/$dir2/$filename.$ext
+```
+
+```sh
+cat $dir1/$dir2/$fname.$ext
+```
