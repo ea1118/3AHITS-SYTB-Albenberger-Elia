@@ -138,3 +138,29 @@ Test.sh wird erstellt mit den dingen in makescript.sh
 Man kann jetzt in Test.sh sein shell script schreiben
 
 ## 3. Uebung(Headline Cat)
+
+### 3.1 Angabe:
+Verwende $@ zur Lösung dieser Aufgabenstellung.
+
+Schreibe ein Skript das eine Art cat zur Verfügung stellt. Als Argumente werden eine beliebige Anzahl von Textdateien übergeben. Das Ergebnis (der Inhalt aller dieser Dateien) wird in die Datei result.txt (fixer Dateiname) geschrieben (ist die Datei vorhanden soll deren Inhalt überschrieben werden). Jedem Datei-Inhalt soll eine Überschrift vorangestellt werden.
+
+Beispiel – der Aufruf
+```
+$ ./headline_cat.sh file1.txt file2.txt file3.txt
+```
+ergibt die Datei result.txt mit folgendem Inhalt:
+```
+== file1.txt ==========================================
+Das ist der Inhalt
+der ersten Textdatei
+
+== file2.txt ==========================================
+Das ist der Inhalt
+der zweiten Textdatei
+
+== file3.txt ==========================================
+Das ist der Inhalt
+der dritten Textdatei
+```
+
+### 3.1 Uebung:
