@@ -12,6 +12,11 @@
 
 - ****Theorie****
 - ****1. Uebung (Variablen)****
+- ****2. Uebung (Begrüßung)****
+- ****3. Uebung (Zeilenumbruch)****
+- ****4. Uebung (admin)****
+- ****5. Uebung (log file names)****
+- ****6. Uebung (backup)****
 
 ## Theorie
 
@@ -145,3 +150,126 @@ echo "Hallo Welt" > $dir1/$dir2/$filename.$ext
 ```sh
 cat $dir1/$dir2/$fname.$ext
 ```
+
+## 2. Uebung (Begrueßung)
+### 2.1 Angabe
+Schreibe ein Shell-Script mit dem Namen begruessung.sh, dieses soll:
+ 
+den Benutzer nach seinem Namen fragen
+den Namen einlesen und in einer Variable speichern
+danach ausgeben:  
+Hallo NAME  
+Schön, dass du da bist.
+ 
+Starte das Script auf alle besprochene Arten.
+ 
+Hinweis: Verwende den read Befehl – recherchiere wie dieser zu verwenden ist.
+ 
+### 2.1 Uebung
+ 
+```
+begruessung.sh:
+ 
+read NAME
+echo Hallo $NAME
+echo Schön, dass du da bist.
+ 
+chmod 755 begruessung.sh      
+ 
+./begruessung.sh
+
+Aleksander
+Hallo Aleksander
+Schön, dass du da bist.
+```
+ 
+## 3. Uebung (Zeilenumbruch)
+### 3.1 Angabe
+Erzeuge eine Variable MSG, die mit echo $MSG folgende Ausgabe erzeugt:
+ 
+Name: Dein Name  
+Klasse: 3AHITS  
+Raum: ...  
+ 
+Vorgaben/Hinweise:
+ 
+Es darf nur eine Variable verwendet werden.
+Der Zeilenumbruch muss in der Variablen mit \n definiert sein.
+ 
+### 3.1 Uebung
+ 
+```
+MSG="Name: Elia Albenberger\nKlasse: 3AHITS\nRaum: ..."
+                          
+echo $MSG                                 
+Name: Elia Albenberger
+Klasse: 3AHITS
+Raum: ...
+```
+ 
+## 4. Uebung (admin)
+### 4.1 Angabe
+Gegeben ist:
+ 
+USER="admin"
+ 
+Gib folgende Strings mit echo korrekt aus:  
+admin_backup  
+admin_2026  
+Erkläre, warum folgende Zeile nicht das gewünschte Ergebnis liefert:  
+echo "$USER_backup"
+ 
+Warum geht echo ```"$USER_backup"``` nicht? Weil Bash denkt die Variable heißt USER_backup
+ 
+### 4.1 Uebung
+```
+USER="admin"
+ 
+echo "${USER}_backup"                     
+                          
+echo "${USER}_2026"  
+```
+ 
+## 5. Uebung (log file names)
+### 5.1 Angabe
+Gegeben ist:
+ 
+DIR="/var/log/"
+ 
+Erzeuge mit echo folgende Ausgaben unter Verwendung der Variabelen DIR:
+ 
+- /var/log/nginx  
+- /var/log/apache
+ 
+### 5.1 Uebung
+ 
+```
+DIR="/var/log/"
+ 
+echo "${DIR}nginx"
+              
+echo "${DIR}apache"
+```
+ 
+## 6. Übung (backup)
+### 6.1 Angabe
+Gegeben ist:
+ 
+BASE="backup"  
+DATE="2026-01-16"
+ 
+Erzeuge folgende Dateinamen mit echo:
+ 
+backup_2026-01-16.tar  
+backup_2026-01-16.tar.gz
+ 
+### 6.1 Uebung
+```
+BASE="backup"      
+                                   
+DATE="2026-01-16"
+                                   
+echo "${BASE}_${DATE}.tar"
+
+                        
+echo "${BASE}_${DATE}.tar.gz"
