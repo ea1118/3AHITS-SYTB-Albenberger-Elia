@@ -2,7 +2,7 @@
 
 |  |  |
 | :--- | :--- |
-| **Datum:** | 24.03.2026 |
+| **Datum:** | 07.04.2026 |
 | **Thema:** | [Arbeitsbericht über Variablen und Shell Scripts](https://www.franzmatejka.at/htl/doc/SYTB_3/02_variablen_ue.html) |
 | **Name:** | Elia Albenberger |
 | **Klasse:** | 3AHITS |
@@ -164,3 +164,103 @@ der dritten Textdatei
 ```
 
 ### 3.1 Uebung:
+
+headline_cat.sh:
+```sh
+#!/bin/bash
+
+# Leert die Datei result.txt bzw. erstellt sie
+> result.txt
+
+# Geht alle übergebenen Argumente/Dateien durch
+for file in "$@"; do
+    echo "== $file ==========================================" >> result.txt
+    cat "$file" >> result.txt
+    echo "" >> result.txt # Extra Zeile für lesbarkeit
+```
+
+
+
+Shell:
+```sh
+
+┌──(kali㉿kali)-[~/SYTB/3AHITS-SYTB-Albenberger-Elia/Shells]
+└─$ echo -e "Das ist der Inhalt\nder ersten Textdatei" > file1.txt
+
+┌──(kali㉿kali)-[~/SYTB/3AHITS-SYTB-Albenberger-Elia/Shells]
+└─$ echo -e "Das ist der Inhalt\nder zweiten Textdatei" > file2.txt
+
+┌──(kali㉿kali)-[~/SYTB/3AHITS-SYTB-Albenberger-Elia/Shells]
+└─$ echo -e "Das ist der Inhalt\nder dritten Textdatei" > file3.txt
+
+┌──(kali㉿kali)-[~/SYTB/3AHITS-SYTB-Albenberger-Elia/Shells]
+└─$ ./headline_cat.sh file1.txt file2.txt file3.txt
+
+┌──(kali㉿kali)-[~/SYTB/3AHITS-SYTB-Albenberger-Elia/Shells]
+└─$ cat result.txt
+== file1.txt ==========================================
+Das ist der Inhalt
+der ersten Textdatei
+
+== file2.txt ==========================================
+Das ist der Inhalt
+der zweiten Textdatei
+
+== file3.txt ==========================================
+Das ist der Inhalt
+der dritten Textdatei
+```
+
+
+
+## 4. Uebung(RANDOM)
+
+### 4.1 Angabe:
+Schreibe ein shellscript das eine beliebige Menge von Dateinamen als Parameter akzeptiert. Von jeder dieser Dateien soll eine Kopie im gleichen Verzeichnis angelegt werden. Die Kopie unterscheidet sich vom Original durch eine angefügte Zufallszahl, Beispiel:
+```sh
+test.txt --> test.txt.38573
+```
+
+Aufrufbeispiele:
+```sh
+$ ./randcp.sh test1.txt test2.txt
+$ ./randcp.sh xyz1.md test3.txt abcd.dat
+$ ./randcp.sh *.md
+```
+
+- Hinweis: $RANDOM liefert bei jeder Verwendung eine zufällige Zahl.
+- Achtung: #!/bin/bash in der she-bang Zeile verwenden. sh unterstützt (in REPL) keine Zufallszahlen.
+
+
+### 4.1 Uebung:
+
+randcp.sh:
+```sh
+#!/bin/bash
+
+for file in "$@"; do
+    # Kopiert und fügt zufallszahl hinten an
+    cp "$file" "$file.$RANDOM"
+done
+```
+
+shell:
+```sh
+┌──(kali㉿kali)-[~/SYTB/3AHITS-SYTB-Albenberger-Elia/Shells]
+└─$ touch xyz1.md test3.txt abcd.dat
+
+┌──(kali㉿kali)-[~/SYTB/3AHITS-SYTB-Albenberger-Elia/Shells]
+└─$ ./randcp.sh xyz1.md test3.txt abcd.dat
+
+┌──(kali㉿kali)-[~/SYTB/3AHITS-SYTB-Albenberger-Elia/Shells]
+└─$ ls -l
+total 16
+-rw-r--r-- 1 kali kali   0 Apr 07 09:15 abcd.dat
+-rw-r--r-- 1 kali kali   0 Apr 07 09:15 abcd.dat.28471
+-rwxr-xr-x 1 kali kali 124 Apr 07 09:13 randcp.sh
+-rw-r--r-- 1 kali kali   0 Apr 07 09:15 test3.txt
+-rw-r--r-- 1 kali kali   0 Apr 07 09:15 test3.txt.9382
+-rw-r--r-- 1 kali kali   0 Apr 07 09:15 xyz1.md
+-rw-r--r-- 1 kali kali   0 Apr 07 09:15 xyz1.md.15024
+```
+
