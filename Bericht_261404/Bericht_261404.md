@@ -14,9 +14,7 @@
 - ****1. Uebung (Anzahl Einträge in einem Verzeichnis)****
 - ****2. Uebung (Tage bis zum Ball)****
 - ****3. Uebung (Zufaelliger Satz)****
-- ****4. Uebung (dated copy V1)****
-- ****5. Uebung (dated copy V2)****
-- ****6. Uebung (dated copy V3)****
+
 
 ## 1. Uebung (Anzahl Einträge in einem Verzeichnis)
 
@@ -114,3 +112,5 @@ Wähle die Wörter aus dieser Wortliste.
 - Erweiterung: Das Skript soll auch die Anzahl der in der Wortliste enthaltenen Wörter ermitteln. D.h. die Konstante 1000 soll im Skript nicht vorkommen.
 
 ### 3.1 Uebung:
+
+Hatte zu wenig Zeit leider nicht fertig geworden. Uebung wurde angefangen aber nicht mehr dokumentiert.
