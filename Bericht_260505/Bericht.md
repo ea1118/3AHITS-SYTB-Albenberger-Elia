@@ -103,3 +103,43 @@ Auswahl n: Das Skript wird beendet.
 
 ### 3.1 Uebung:
 
+**ifstatement.sh:**
+
+read -p fordert eine eingabe vom benutzer die dann an "choice" übergeben wird
+```sh
+#!/bin/bash
+
+FolderName=$1
+FileName=$2
+Text=$3
+
+if [[ -d "$FolderName" ]]
+then
+  read -p "Soll das Directory $FolderName (mit files) gelöscht werden? [j|n]: " choice
+
+  if [["$choice" == "j" ]]
+  then
+    rm -rf "$FolderName"
+    else
+    echo "Abgebrochen"
+    fi
+  
+else
+    mkdir -p "$FolderName"
+    
+    echo "$Text" > "$FolderName/$FileName"
+
+    echo "Directory mit Inhalt wurde erstellt"
+fi
+```
+
+**ausgabe:**
+
+Erstellen funktioniert aber beim löschen von der existierenden datei scheitert es
+```sh
+┌──(kali㉿kali)-[~/SYTB/3AHITS-SYTB-Albenberger-Elia/Shells]
+└─$ ./ifstatement.sh xyz xyz xyz
+Soll das Directory xyz (mit files) gelöscht werden? [j|n]: j
+./ifstatement.sh: line 11: [[j: command not found
+Abgebrochen
+```

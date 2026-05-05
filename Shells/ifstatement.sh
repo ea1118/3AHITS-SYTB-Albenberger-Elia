@@ -6,11 +6,11 @@ Text=$3
 
 if [[ -d "$FolderName" ]]
 then
-  read -p "Soll das Directory "$FolderName" (mit files) gelöscht werden? [j|n]:" choice
-  
-  if (("$choice" == j))
+  read -p "Soll das Directory $FolderName (mit files) gelöscht werden? [j|n]: " choice
+
+  if [["$choice" == "j" ]]
   then
-    rm -rf "&FolderName"
+    rm -rf "$FolderName"
     else
     echo "Abgebrochen"
     fi
