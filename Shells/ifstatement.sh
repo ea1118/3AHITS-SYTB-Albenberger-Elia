@@ -8,7 +8,7 @@ if [[ -d "$FolderName" ]]
 then
   read -p "Soll das Directory $FolderName (mit files) gelöscht werden? [j|n]: " choice
 
-  if [["$choice" == "j" ]]
+  if [[ $choice == "j" ]]
   then
     rm -rf "$FolderName"
     else

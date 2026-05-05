@@ -117,7 +117,8 @@ if [[ -d "$FolderName" ]]
 then
   read -p "Soll das Directory $FolderName (mit files) gelöscht werden? [j|n]: " choice
 
-  if [["$choice" == "j" ]]
+# leerzeichen vor $choice hat gefehlt 
+  if [[$choice == "j" ]]
   then
     rm -rf "$FolderName"
     else
@@ -143,3 +144,5 @@ Soll das Directory xyz (mit files) gelöscht werden? [j|n]: j
 ./ifstatement.sh: line 11: [[j: command not found
 Abgebrochen
 ```
+
+Nach dem leerzeichen funktioniert einwandfrei der Ornder wird samt files gelöscht und wenn keiner existiert wird er erstellt
