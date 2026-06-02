@@ -13,6 +13,7 @@
 
 - ****1. Uebung (RegexOne)****
 - ****2. Uebung (Subdir Count)****
+- ****4. Uebung (sed)****
 
 
 ## 1. Uebung (RegexOne)
@@ -46,4 +47,20 @@ echo "$anzahl"
 **grep '^d':** nimmt alles was mit "d" anfängt
 
 **wc -l:** zählt wieviele es sind und das ist die zahl die dann übergeben wird
+
+## 4. Uebung (sed)
+
+### 4.1 Angabe:
+Löse mit sed:
+
+Entferne alle # die sich am Ende der Zeile befinden
+Entferne alle # die sich am Anfang der Zeile befinden
+Füge === am Beginn jeder Zeile ein
+Füge () rund um jedes Wort ein. Ein Wort ist definiert als mindestens ein nicht-Leerzeichen.
+
+### 4.1 Uebung:
+
+
+
+
 
