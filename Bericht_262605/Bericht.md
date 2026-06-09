@@ -168,13 +168,11 @@ sed -E 's/([0-9]{4})-([0-9]{2})-([0-9]{2})/\3.\2.\1/g'
 Lege eine Textdatei mit folgendem Inhalt an (Ausschnitt aus einem Logfile).
 
 Aufgabenstellung:
+Verwende grep um nur jene Zeilen auszugeben die configure enthalten. Jene Zeilen die half-configured enthalten sollen nicht ausgegeben werden
 
-Verwende grep um nur jene Zeilen auszugeben die configure enthalten. Jene Zeilen die half-configured enthalten sollen nicht ausgegeben werden.
 Verwende grep um nur jene Zeilen auszugeben die libsombok oder libposix enthalten.
 Verwende sed um die Zeilen ohne die Uhrzeit auszugeben, d.h. ersetzte durch einen leeren String.
 Verwende sed um die Zeilen ohne das Datum auszugeben.
 Verwende sed um das Datum umzuformatieren von YYYY-MM-TT auf TT.MM.YYYY. 2021-01-16-> 16.01.2021.
-
-
 
 ### 6.1 Uebung:
