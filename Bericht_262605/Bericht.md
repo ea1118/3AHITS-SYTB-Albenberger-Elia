@@ -13,8 +13,10 @@
 
 - ****1. Uebung (RegexOne)****
 - ****2. Uebung (Subdir Count)****
+- ****3. Uebung (REs)****
 - ****4. Uebung (sed)****
-
+- ****5. Uebung (Datum)****
+- ****6. Uebung (Logfile)****
 
 ## 1. Uebung (RegexOne)
 
@@ -48,6 +50,49 @@ echo "$anzahl"
 
 **wc -l:** zählt wieviele es sind und das ist die zahl die dann übergeben wird
 
+
+## 3. Uebung (REs)
+
+### 3.1 Angabe:
+Finde 5 substantiell unterschiedliche Strings die durch folgende RE gematcht werden:
+```sh
+^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.-]+$
+```
+Verwende zum test grep.js.org
+
+Achtung: ERE daher -E Option notwendig.
+
+### 3.1 Uebung:
+```sh
+^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.-]+$
+```
+Diese Regular Expression sucht nach einer email-adresse
+
+```^[a-zA-Z0-9_.+-]```: Hier wird der Vorname zum Beispiel ```max.mustermann``` gesucht.
+
+```+@```: fügt ein @ nach ```max.mustermann@```ein
+
+```[a-zA-Z0-9-]+\.[a-zA-Z0-9.-]+$```: sucht die domain zum beispiel ```gmail.com```. Das ```+\.```sagt das dazwischen ein punkt sein muss
+
+1. Normale email-adresse
+
+max.mustermann@gmail.com
+
+2. Plus-Zeichen im vorderen Teil und ein Bindestrich in der Domain
+
+info+newsletter@mein-shop.de
+
+3. nutzt Zahlen und den Unterstrich.
+
+user_1@12345.org
+
+4. Nutzt so ziemlich jede Regel aus.
+
+hallo.welt_123+-@mail-server.co.uk
+
+5. Wenn man bei ```+\.``` den ```\```vergisst werden auch solche email-adresse ausgegeben da ```+.``` sagt: hier steht ein beliebiger Buchstabe
+
+admin@serverXendung
 ## 4. Uebung (sed)
 
 ### 4.1 Angabe:
