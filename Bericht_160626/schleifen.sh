@@ -9,10 +9,6 @@ do
     ((counter++))
 done
 
-
-
-
-
 #for
 
 #Liste = durch while spaces getrennter string
